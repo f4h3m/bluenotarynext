@@ -21,9 +21,15 @@ export const BLOG_CATEGORIES = [
 ] as const;
 
 export default config({
-  storage: {
-    kind: "local",
-  },
+  storage:
+    process.env.NODE_ENV === "production"
+      ? {
+          kind: "github",
+          repo: "f4h3m/bluenotarynext",
+        }
+      : {
+          kind: "local",
+        },
   collections: {
     posts: collection({
       label: "Posts",
