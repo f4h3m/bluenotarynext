@@ -20,20 +20,14 @@ export const BLOG_CATEGORIES = [
   "Identity Authentication",
 ] as const;
 
-const isGitHubMode =
-  Boolean(
-    process.env.KEYSTATIC_GITHUB_CLIENT_ID ||
-      process.env.KEYSTATIC_SECRET ||
-      process.env.NEXT_PUBLIC_KEYSTATIC_PROJECT
-  );
+// Next.js automatically inlines process.env.NODE_ENV into both server and client bundles
+const isProd = process.env.NODE_ENV === "production";
 
 export default config({
-  storage: isGitHubMode
+  storage: isProd
     ? {
         kind: "github",
-        repo:
-          (process.env.NEXT_PUBLIC_KEYSTATIC_REPO as `${string}/${string}`) ||
-          "f4h3m/bluenotarynext",
+        repo: "f4h3m/bluenotarynext",
       }
     : {
         kind: "local",
