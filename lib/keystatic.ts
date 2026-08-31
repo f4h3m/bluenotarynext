@@ -92,6 +92,9 @@ export async function getPostBySlug(slug: string) {
     const rawPost = await reader.collections.posts.read(slug);
     if (!rawPost) return null;
 
+    const contentString =
+      typeof rawPost.content === "function" ? await rawPost.content() : "";
+
     return {
       slug,
       title: rawPost.title,
@@ -110,7 +113,7 @@ export async function getPostBySlug(slug: string) {
       excerpt: rawPost.excerpt,
       featured: Boolean(rawPost.featured),
       tags: rawPost.tags || [],
-      content: rawPost.content,
+      content: contentString,
     };
   } catch (error) {
     console.error(`Error reading post with slug ${slug}:`, error);

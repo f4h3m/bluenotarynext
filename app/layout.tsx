@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} font-sans h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F7F6F1] text-[#2C2B2B]">
+      <body className="min-h-full flex flex-col bg-[#fffcf1] text-[#2C2B2B]">
         {children}
       </body>
     </html>

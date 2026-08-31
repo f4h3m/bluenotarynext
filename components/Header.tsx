@@ -230,7 +230,7 @@ export default function Header({ className = "" }: HeaderProps) {
         <div
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className={`absolute top-0 right-0 h-full w-full max-w-[430px] bg-[#FAF9F5] border-l border-[#D2D0C7] shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-out transform ${
+          className={`absolute top-0 right-0 h-full w-full max-w-[430px] bg-[#fffcf1] border-l border-[#D2D0C7] shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-out transform ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -273,7 +273,7 @@ export default function Header({ className = "" }: HeaderProps) {
                       <button
                         type="button"
                         onClick={() => toggleAccordion(item.label)}
-                        className="flex items-stretch w-full text-left bg-[#FAF9F5] hover:bg-black/[0.02] transition-colors cursor-pointer group"
+                        className="flex items-stretch w-full text-left bg-[#fffcf1] hover:bg-black/[0.02] transition-colors cursor-pointer group"
                       >
                         {/* Left Image Thumbnail */}
                         <div className="relative w-16 sm:w-20 min-h-[58px] shrink-0 overflow-hidden border-r border-[#D2D0C7] bg-[#3B40D5]">
@@ -311,7 +311,7 @@ export default function Header({ className = "" }: HeaderProps) {
                             : "grid-rows-[0fr] opacity-0 border-t-0"
                         }`}
                       >
-                        <div className="overflow-hidden bg-[#F6F4EE]">
+                        <div className="overflow-hidden bg-[#f8f5ea]">
                           {item.children!.map((child) => (
                             <Link
                               key={child.label}
@@ -323,7 +323,7 @@ export default function Header({ className = "" }: HeaderProps) {
                                 {child.label}
                               </div>
                               <div
-                                className="border-l border-[#D2D0C7] flex items-center justify-center text-[16px] font-medium text-[#61605C] bg-[#FAF9F5]"
+                                className="border-l border-[#D2D0C7] flex items-center justify-center text-[16px] font-medium text-[#61605C] bg-[#fffcf1]"
                                 style={{ width: "57px" }}
                               >
                                 {child.num}
@@ -340,7 +340,7 @@ export default function Header({ className = "" }: HeaderProps) {
                 return (
                   <div
                     key={item.label}
-                    className="flex items-stretch border-b border-[#D2D0C7] bg-[#FAF9F5] hover:bg-black/[0.02] transition-colors group"
+                    className="flex items-stretch border-b border-[#D2D0C7] bg-[#fffcf1] hover:bg-black/[0.02] transition-colors group"
                   >
                     {/* Left Image Thumbnail */}
                     <div className="relative w-16 sm:w-20 min-h-[58px] shrink-0 overflow-hidden border-r border-[#D2D0C7] bg-[#3B40D5]">
@@ -368,7 +368,7 @@ export default function Header({ className = "" }: HeaderProps) {
           </div>
 
           {/* Drawer Footer Actions */}
-          <div className="p-5 sm:p-6 border-t border-[#D2D0C7] bg-[#FAF9F5] shrink-0">
+          <div className="p-5 sm:p-6 border-t border-[#D2D0C7] bg-[#fffcf1] shrink-0">
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <Link
                 href="/signup"

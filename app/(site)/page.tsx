@@ -15,7 +15,7 @@ export default async function Home() {
   ]);
 
   return (
-    <main className="flex-1 flex flex-col bg-[#F7F6F1] px-6 sm:px-10 md:px-14 lg:px-16">
+    <main className="flex-1 flex flex-col bg-[#fffcf1] px-6 sm:px-10 md:px-14 lg:px-16">
       {/* Top 60/40 Blog Hero Section */}
       <BlogHeroSection
         featuredPost={featuredPost}
