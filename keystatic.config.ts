@@ -20,16 +20,24 @@ export const BLOG_CATEGORIES = [
   "Identity Authentication",
 ] as const;
 
+const isGitHubMode =
+  Boolean(
+    process.env.KEYSTATIC_GITHUB_CLIENT_ID ||
+      process.env.KEYSTATIC_SECRET ||
+      process.env.NEXT_PUBLIC_KEYSTATIC_PROJECT
+  );
+
 export default config({
-  storage:
-    process.env.NODE_ENV === "production"
-      ? {
-          kind: "github",
-          repo: "f4h3m/bluenotarynext",
-        }
-      : {
-          kind: "local",
-        },
+  storage: isGitHubMode
+    ? {
+        kind: "github",
+        repo:
+          (process.env.NEXT_PUBLIC_KEYSTATIC_REPO as `${string}/${string}`) ||
+          "f4h3m/bluenotarynext",
+      }
+    : {
+        kind: "local",
+      },
   collections: {
     posts: collection({
       label: "Posts",
